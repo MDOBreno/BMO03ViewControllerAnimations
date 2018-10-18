@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "OpcoesController.h"
 
 @interface ViewController ()
 
@@ -20,4 +21,34 @@
 }
 
 
+
+-(void) mostraControllerComAnimacao:(UIModalTransitionStyle) estilo {
+    OpcoesController *c = [[OpcoesController alloc] init];
+    
+    // Abaixo é a animação padrão, e podemos omitir isso na prática:
+    c.modalTransitionStyle = estilo;
+    
+    [self presentModalViewController:c animated:YES];
+    
+    [c release];
+}
+
+
+
+- (IBAction)showDissolve:(id)sender {
+    [self mostraControllerComAnimacao:UIModalTransitionStyleCrossDissolve];
+}
+
+- (IBAction)showPageCurl:(id)sender {
+    [self mostraControllerComAnimacao:UIModalTransitionStylePartialCurl];
+}
+
+- (IBAction)showVertical:(id)sender {
+    // Esse "UIModalTransitionStyleCoverVertical" é uma animação padrão, e podemos omitir isso na prática:
+    [self mostraControllerComAnimacao:UIModalTransitionStyleCoverVertical];
+}
+
+- (IBAction)showHorizontal:(id)sender {
+    [self mostraControllerComAnimacao:UIModalTransitionStyleFlipHorizontal];
+}
 @end
