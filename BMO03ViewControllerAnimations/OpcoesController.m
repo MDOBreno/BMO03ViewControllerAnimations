@@ -29,4 +29,7 @@
 }
 */
 
+- (IBAction)close:(id)sender {
+    [self dismissModalViewControllerAnimated:YES];
+}
 @end
