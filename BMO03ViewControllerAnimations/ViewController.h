@@ -10,6 +10,10 @@
 
 @interface ViewController : UIViewController
 
+- (IBAction)showDissolve:(id)sender;
+- (IBAction)showPageCurl:(id)sender;
+- (IBAction)showVertical:(id)sender;
+- (IBAction)showHorizontal:(id)sender;
 
 @end
 
